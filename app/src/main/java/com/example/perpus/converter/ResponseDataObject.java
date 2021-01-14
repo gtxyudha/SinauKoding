@@ -26,7 +26,7 @@ public class ResponseDataObject<T> implements Parcelable {
     public static final Creator<ResponseDataObject> CREATOR = new Creator<ResponseDataObject>() {
         @Override
         public ResponseDataObject createFromParcel(Parcel in) {
-            return ResponseDataObject(in);
+            return new ResponseDataObject(in);
         }
 
         @Override
