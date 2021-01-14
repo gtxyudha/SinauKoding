@@ -14,6 +14,12 @@ public class Book {
 
     private String isbn;
 
+    private String author;
+
+    private String publisher;
+
+    private String description;
+
 
 
 }
