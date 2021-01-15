@@ -37,7 +37,7 @@ public class ApiService {
             .validateEagerly(true)
             .addConverterFactory(GsonConverterFactory.create());
 
-    private <S> S createService(Class<S> serviceClass){
+    static <S> S createService(Class<S> serviceClass){
         if (httpClient == null){
             httpClient = new OkHttpClient.Builder();
         }

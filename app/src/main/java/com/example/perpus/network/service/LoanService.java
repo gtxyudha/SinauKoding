@@ -28,7 +28,7 @@ public class LoanService extends BaseService {
     }
 
     public Call<ResponseDataObject<Loan>> defind(@Body Loan loan){
-        return baseApi.getLoanApi().doAdd(Loan);
+        return baseApi.getLoanApi().doAdd(loan);
     }
 
 }

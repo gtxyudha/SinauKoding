@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 
 public class Loan implements Parcelable, Cloneable {
-    public  enum StatusLoan{
+    public enum StatusLoan{
         BORROWED,
         RETURNED;
 
