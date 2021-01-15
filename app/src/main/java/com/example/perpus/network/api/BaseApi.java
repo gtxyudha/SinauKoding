@@ -1,4 +1,9 @@
 package com.example.perpus.network.api;
 
-public class BaseApi {
+public interface BaseApi {
+    BookApi getBookApi();
+
+    LoanApi getLoanApi();
+
+    LoginApi getLoginApi();
 }

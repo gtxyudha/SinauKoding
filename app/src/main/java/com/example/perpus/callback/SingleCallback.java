@@ -3,6 +3,7 @@ package com.example.perpus.callback;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.example.perpus.common.StatusCode;
 import com.example.perpus.converter.ResponseDataObject;
 
 
@@ -27,7 +28,7 @@ public abstract class SingleCallback<T> implements Callback<ResponseDataObject<T
                         validateStatusCode(response.body());
                 }
             } else {
-                onGetStatus("status");
+                onGetStatus(StatusCode.DATA_NOT_FOUND);
             }
         });
     }
@@ -55,7 +56,7 @@ public abstract class SingleCallback<T> implements Callback<ResponseDataObject<T
     public abstract void onDefaultResponse(ResponseDataObject<T> response) throws ParseException;
 
     public void onDefaultFailure(Throwable t){
-        onGetStatus("status");
+        onGetStatus(StatusCode.SERVICE_OFFLINE);
     }
 
     public void onGetStatus (String status){

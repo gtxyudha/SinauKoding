@@ -3,6 +3,7 @@ package com.example.perpus.callback;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.example.perpus.common.StatusCode;
 import com.example.perpus.converter.ResponseDataList;
 
 import retrofit2.Call;
@@ -24,7 +25,7 @@ public abstract class ListCallBack<T> implements Callback<ResponseDataList<T>> {
                             validationStatusCode(response.body());
                     }
                 }else {
-                    onGetStatus(response.body().getStatus());
+                    onGetStatus(StatusCode.DATA_NOT_FOUND);
                 }
             }
         });
@@ -46,7 +47,7 @@ public abstract class ListCallBack<T> implements Callback<ResponseDataList<T>> {
 
     void validationStatusCode(ResponseDataList<T> response){
         if(response.getStatus() != null){
-
+            onGetStatus(response.getStatus());
         }
     }
 
