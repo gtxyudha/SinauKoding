@@ -24,7 +24,7 @@ public class Book implements Parcelable, Cloneable {
 
     private String description;
 
-    protected Book(Parcel in){
+    public Book(Parcel in){
         if (in.readByte() == 0){
             id = null;
         } else {

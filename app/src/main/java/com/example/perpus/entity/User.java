@@ -4,11 +4,12 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-
+@NoArgsConstructor
 public class User implements Cloneable, Parcelable {
 
     private Long id;
@@ -23,7 +24,7 @@ public class User implements Cloneable, Parcelable {
 
     private String token;
 
-    protected User(Parcel in){
+    public User(Parcel in){
         if (in.readByte() == 0){
             id = null;
         } else {

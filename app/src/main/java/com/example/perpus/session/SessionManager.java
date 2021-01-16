@@ -53,7 +53,7 @@ public class SessionManager {
     }
 
     public boolean isLogin(){
-        return pref.getBoolean(IS_LOGIN, true);
+        return pref.getBoolean(IS_LOGIN, false);
     }
 
     public void doLogin(){
