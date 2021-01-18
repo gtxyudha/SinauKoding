@@ -1,12 +1,13 @@
 package com.example.perpus.view.login;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 
-import android.content.Intent;
-import android.os.Bundle;
-
+import com.example.perpus.R;
 import com.example.perpus.entity.User;
 import com.example.perpus.session.SessionManager;
 import com.example.perpus.view.dashboard.DashboardActivity;
@@ -15,7 +16,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends AppCompatActivity implements LoginView{
+public class LoginActivity extends AppCompatActivity implements LoginView {
+
 
     @BindView(R.id.text_username)
     AppCompatEditText textUsername;
@@ -23,7 +25,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     AppCompatEditText textPassword;
     @BindView(R.id.button_login)
     AppCompatButton buttonLogin;
-
     private LoginPresenter presenter;
 
     @Override
@@ -37,13 +38,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
 
 
-
-    private void validation(){
-        if (textUsername.getText().length() < 5){
+    private void validation() {
+        if (textUsername.getText().length() < 5) {
             textUsername.setError("Silahkan masukan Username yang Benar");
-        } else if (textPassword.getText().length() < 3 ){
+        } else if (textPassword.getText().length() < 3) {
             textPassword.setError("Silahkan masukan password dengan benar");
-        }else{
+        } else {
             User user = new User();
             user.setUsername(textUsername.getText().toString());
             user.setPassword(textPassword.getText().toString());
@@ -52,12 +52,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
             presenter.doLogin(user);
         }
-    }
-
-    @OnClick(R.id.button_login)
-    public void onViewClicked(){
-        validation();
-
     }
 
     @Override
@@ -71,5 +65,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void onLoginFailed(String statusCode) {
         buttonLogin.setEnabled(true);
+    }
+
+    @OnClick(R.id.button_login)
+    public void onClick() {validation();
     }
 }
