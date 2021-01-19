@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface BookApi {
-    @GET("book")
+    @GET("books")
     Call<ResponseDataList<Book>> defind (@Query("param") String param,
                                          @Query("offset") Integer ofset,
                                          @Query("limit") Integer limit);

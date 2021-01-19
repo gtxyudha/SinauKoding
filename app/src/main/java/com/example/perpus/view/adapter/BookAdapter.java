@@ -36,7 +36,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.VarianViewHold
 
     @NonNull
     @Override
-    public VariantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+    public VarianViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book, parent, false);
         return new VarianViewHolder(view);
     }
