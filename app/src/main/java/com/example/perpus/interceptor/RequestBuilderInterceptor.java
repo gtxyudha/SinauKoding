@@ -1,5 +1,9 @@
 package com.example.perpus.interceptor;
 
+import com.example.perpus.entity.User;
+import com.example.perpus.session.SessionManager;
+import com.example.perpus.view.MainActivity;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -17,6 +21,12 @@ public class RequestBuilderInterceptor implements Interceptor {
         Request original = chain.request();
 
         String token = null;
+
+        User currentUser = SessionManager.getInstance(MainActivity.getInstance()).getCurrentLogin();
+
+        if (currentUser != null && currentUser.getToken() != null){
+            token = currentUser.getToken();
+        }
 
         if (token != null){
             requestBuilder = original.newBuilder()

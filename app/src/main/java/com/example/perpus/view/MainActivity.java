@@ -18,6 +18,12 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static MainActivity INSTANCE;
+
+    public static synchronized MainActivity getInstance(){
+        return INSTANCE;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
