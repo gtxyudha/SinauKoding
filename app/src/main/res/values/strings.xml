@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Perpus</string>
+    
+    <array name="identitas">
+        <item>KTP</item>
+        <item>SIM</item>
+        <item>Kartu Mahasiswa</item>
+        <item>Kartu Pelajar</item>
+        <item>Kartu Perpustakaan</item>
+    </array>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.perpus.view.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -11,6 +12,7 @@ import com.example.perpus.R;
 import com.example.perpus.entity.Book;
 import com.example.perpus.view.adapter.BookAdapter;
 import com.example.perpus.view.adapter.BookAdapterListener;
+import com.example.perpus.view.loan.LoanActivity;
 
 import java.util.List;
 
@@ -38,7 +40,10 @@ public class DashboardActivity extends AppCompatActivity implements BookAdapterL
 
     @Override
     public void onBorrow(Book book) {
+        Intent intent = new Intent(this, LoanActivity.class);
+        intent.putExtra("book", book);
 
+        startActivity(intent);
     }
 
     @Override

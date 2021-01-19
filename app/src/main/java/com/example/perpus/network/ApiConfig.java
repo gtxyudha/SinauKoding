@@ -1,6 +1,7 @@
 package com.example.perpus.network;
 
 import com.example.perpus.BuildConfig;
+import com.example.perpus.converter.DataWrapperConverterFactory;
 import com.example.perpus.network.api.BaseApi;
 import com.example.perpus.network.api.BookApi;
 import com.example.perpus.network.api.LoanApi;
@@ -51,6 +52,7 @@ public class ApiConfig implements BaseApi {
                 .callbackExecutor(Executors.newCachedThreadPool())
                 .validateEagerly(true)
                 .client(httpClient.build())
+                .addConverterFactory(new DataWrapperConverterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(LoginApi.class);
     }

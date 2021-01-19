@@ -1,6 +1,7 @@
 package com.example.perpus.network;
 
 import com.example.perpus.BuildConfig;
+import com.example.perpus.converter.DataWrapperConverterFactory;
 import com.example.perpus.interceptor.RequestBuilderInterceptor;
 
 import java.util.concurrent.Executor;
@@ -35,6 +36,7 @@ public class ApiService {
             .baseUrl(BuildConfig.BEST_API)
             .callbackExecutor(Executors.newCachedThreadPool())
             .validateEagerly(true)
+            .addConverterFactory(new DataWrapperConverterFactory())
             .addConverterFactory(GsonConverterFactory.create());
 
     static <S> S createService(Class<S> serviceClass){

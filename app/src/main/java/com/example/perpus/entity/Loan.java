@@ -4,11 +4,12 @@ import android.os.Parcelable;
 
 import java.util.Date;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-
+@NoArgsConstructor
 public class Loan implements Parcelable, Cloneable {
     public enum StatusLoan{
         BORROWED,
@@ -34,7 +35,7 @@ public class Loan implements Parcelable, Cloneable {
 
     private User user;
 
-    protected Loan(Parcel in){
+    public Loan(Parcel in){
         typeIdentity = in.readString();
         numberIdentity = in.readString();
         duration = in.readInt();
