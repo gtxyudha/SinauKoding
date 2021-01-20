@@ -1,5 +1,9 @@
 package com.example.perpus.view.loan;
 
+import android.content.Context;
+import android.view.ContextThemeWrapper;
+import android.widget.Toast;
+
 import com.example.perpus.callback.ListCallBack;
 import com.example.perpus.callback.SingleCallback;
 import com.example.perpus.converter.ResponseDataList;
@@ -14,8 +18,12 @@ import retrofit2.Call;
 public class LoanPresenter {
 
     private LoanView view;
-    public LoanPresenter(LoanView view) {
+
+    private Context context;
+
+    public LoanPresenter(LoanView view, Context ctx) {
         this.view = view;
+        this.context = ctx;
     }
 
     public void doSave(Loan param){
@@ -31,11 +39,16 @@ public class LoanPresenter {
             @Override
             public void onDefaultFailure(Throwable t) {
                 super.onDefaultFailure(t);
+
+                Toast.makeText(context, "Data gagal", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onGetStatus(String status) {
                 super.onGetStatus(status);
+
+                Toast.makeText(context, "Data Berhasil", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.example.perpus.view.loan;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -49,13 +50,15 @@ public class LoanActivity extends AppCompatActivity implements LoanView {
 
     private Book book;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loan);
         ButterKnife.bind(this);
 
-        presenter = new LoanPresenter(this);
+        presenter = new LoanPresenter(this, this);
 
         currentUser = SessionManager.getInstance(this).getCurrentLogin();
 
