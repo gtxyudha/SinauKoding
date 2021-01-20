@@ -1,9 +1,11 @@
 package com.example.perpus.session;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.example.perpus.entity.User;
+import com.example.perpus.view.login.LoginActivity;
 import com.google.gson.Gson;
 
 public class SessionManager {
@@ -80,6 +82,12 @@ public class SessionManager {
         editor.clear();
         editor.apply();
 
+        Intent intent = new Intent(context, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.putExtra("EXIT", true);
+        context.startActivity(intent);
 
     }
 
