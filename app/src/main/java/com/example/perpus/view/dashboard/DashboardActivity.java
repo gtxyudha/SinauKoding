@@ -16,6 +16,7 @@ import com.example.perpus.entity.Book;
 import com.example.perpus.session.SessionManager;
 import com.example.perpus.view.adapter.BookAdapter;
 import com.example.perpus.view.adapter.BookAdapterListener;
+import com.example.perpus.view.history.HistoryActivity;
 import com.example.perpus.view.loan.LoanActivity;
 
 import java.util.List;
@@ -74,6 +75,7 @@ public class DashboardActivity extends AppCompatActivity implements BookAdapterL
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu_history:
+                startActivity(new Intent(this, HistoryActivity.class));
                 break;
             case R.id.menu_logout:
                 SessionManager.getInstance(this).doLogout();

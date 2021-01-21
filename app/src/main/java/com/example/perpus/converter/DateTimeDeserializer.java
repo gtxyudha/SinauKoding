@@ -19,7 +19,12 @@ public class DateTimeDeserializer implements JsonDeserializer<Date> {
         try{
             return formatter.parse(date);
         } catch (ParseException e){
-            e.printStackTrace();
+            try {
+                formatter = new SimpleDateFormat("yyyy-MM-dd");
+                return formatter.parse(date);
+            } catch (ParseException el){
+
+            }
         }
         return null;
     }
