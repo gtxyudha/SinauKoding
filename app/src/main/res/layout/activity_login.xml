@@ -59,13 +59,34 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_login"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center"
-        android:text="Login"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center">
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_login"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:layout_marginRight="5dp"
+                android:text="Login"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_link_register"
+                android:textAllCaps="false"
+                android:text="Register"
+                android:layout_marginLeft="5dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

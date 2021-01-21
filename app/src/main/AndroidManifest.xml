@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Perpus"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.history.HistoryActivity"></activity>
+        <activity android:name=".view.register.RegisterActivity"></activity>
+        <activity android:name=".view.history.HistoryActivity" />
         <activity android:name=".view.loan.LoanActivity" />
         <activity android:name=".view.dashboard.DashboardActivity" />
         <activity android:name=".view.login.LoginActivity" />

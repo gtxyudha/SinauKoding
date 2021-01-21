@@ -2,6 +2,7 @@ package com.example.perpus.view.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -11,6 +12,7 @@ import com.example.perpus.R;
 import com.example.perpus.entity.User;
 import com.example.perpus.session.SessionManager;
 import com.example.perpus.view.dashboard.DashboardActivity;
+import com.example.perpus.view.register.RegisterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,10 +23,16 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @BindView(R.id.text_username)
     AppCompatEditText textUsername;
+
     @BindView(R.id.text_password)
     AppCompatEditText textPassword;
+
     @BindView(R.id.button_login)
     AppCompatButton buttonLogin;
+
+    @BindView(R.id.button_link_register)
+    AppCompatButton buttonLinkRegister;
+
     private LoginPresenter presenter;
 
     @Override
@@ -67,7 +75,16 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         buttonLogin.setEnabled(true);
     }
 
-    @OnClick(R.id.button_login)
-    public void onClick() {validation();
+
+    @OnClick({R.id.button_login, R.id.button_link_register})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button_login:
+                validation();
+                break;
+            case R.id.button_link_register:
+                startActivity(new Intent(this, RegisterActivity.class));
+                break;
+        }
     }
 }
