@@ -37,7 +37,7 @@ public class HistoryActivity extends AppCompatActivity implements LoanView {
         setContentView(R.layout.activity_history);
         ButterKnife.bind(this);
 
-        presenter = new LoanPresenter(this);
+        presenter = new LoanPresenter(this, this);
 
         currentUser = SessionManager.getInstance(this).getCurrentLogin();
 

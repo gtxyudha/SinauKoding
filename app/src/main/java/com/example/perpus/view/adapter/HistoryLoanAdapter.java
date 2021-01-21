@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class HistoryLoanAdapter extends RecyclerView.Adapter<HistoryLoanAdapter.VarianViewHolder> {
 
@@ -41,7 +42,7 @@ public class HistoryLoanAdapter extends RecyclerView.Adapter<HistoryLoanAdapter.
         holder.textJudulBuku.setText(loan.getBook().getTitle());
         holder.textKodeBuku.setText(loan.getBook().getIsbn());
         holder.textBorrowDate.setText(loan.getLoanDate() != null ? DateUtils.converterToDateFromData(loan.getLoanDate()) : "-");
-        holder.textReturnDate.setText(loan.getReturnDate() != null ? DateUtils.converterToDateFromData(loan.getReturnDate().toString()) : "-");
+        holder.textReturnDate.setText(loan.getReturnDate() != null ? DateUtils.converterToDateFromData(loan.getReturnDate()) : "-");
 
     }
 
@@ -63,6 +64,11 @@ public class HistoryLoanAdapter extends RecyclerView.Adapter<HistoryLoanAdapter.
 
         @BindView(R.id.text_return_date)
         AppCompatTextView textReturnDate;
+
+        public VarianViewHolder(@NonNull View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
     }
 
 

@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginBottom="10dp"
     android:padding="4dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
 
@@ -38,13 +39,15 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="10sp"
+            android:textSize="18sp"
             android:text="Kode Buku"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:id="@+id/text_kode_buku"
             android:textSize="18sp"
             android:text="A"
@@ -63,13 +66,15 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="10sp"
+            android:textSize="18sp"
             android:text="Tanggal Pinjam"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:id="@+id/text_borrow_date"
             android:textSize="18sp"
             android:text="A"
@@ -88,13 +93,14 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="10sp"
+            android:textSize="18sp"
             android:text="Tanggal Kembali"
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:id="@+id/text_return_date"
             android:textSize="18sp"
             android:text="A"
