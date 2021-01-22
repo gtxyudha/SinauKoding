@@ -3,6 +3,7 @@ package com.example.perpus.view.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -73,6 +74,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     public void onLoginFailed(String statusCode) {
         buttonLogin.setEnabled(true);
+        textPassword.setError("Silahkan masukan password dengan benar");
+        textUsername.setError("Silahkan masukan password dengan benar");
     }
 
 
